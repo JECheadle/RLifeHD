@@ -9,6 +9,9 @@ lhd_dir_builder()
 \arguments{
 \item{Takes}{no parameters.}
 }
+\value{
+NA
+}
 \description{
 \code{lhd_dir_builder} will check the master excel file against the *.RData
 version. If they differ will save new versions of RData and *.csv versions
