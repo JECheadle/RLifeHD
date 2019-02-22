@@ -11,9 +11,10 @@
 #' @examples
 #' ## Run the command
 #' lhd_dir_builder()
+#'
 lhd_dir_builder <- function() {
     ## Not sure what best solution is here
-    setwd("/Users/jcheadle2/Box/GitHub/Software/R/LifeHD")
+    setwd("/Users/jcheadle2/Box/GitHub/Software/R/RLifeHD")
     ## Load Data
     packageStartupMessage("LifeHD: Checking project dir files...")
     xhosts <- as_tibble(read_excel("Data/lhd_dir.xlsx", sheet = "Hosts"))

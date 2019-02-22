@@ -17,6 +17,8 @@
 #' library(RLifeHD)
 #' lhd_dir("StudentHD1", "sHD1_Race")
 #'
+
+library(tidyverse)
 lhd_dir <- function(project, subproject) {
     ## Determine which machine, prepare hosts projects
     sysinfo <- Sys.info()
