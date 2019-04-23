@@ -25,14 +25,15 @@ lhd_dir <- function(project, subproject) {
     sysinfo <- Sys.info()
     host <- sysinfo[["nodename"]]
     user <- sysinfo[["user"]]
+    sysname <- sysinfo[["sysname"]]
     ## data("lhd_dir")
-    hosts <- filter(hosts, hostname == host, username == user)
+    hosts <- filter(hosts, (hostname == host | hostname == sysname), username == user)
     ## hosts checks
     if (dim(hosts)[1] == 0) {
         stop("Host file problem:  missing user or computer?")
     }
     else if (dim(hosts)[1] > 1) {
-        stop("Host file problem: more than one user/computer combo identified.")
+        warning("Host file problem: more than one user/computer combo identified.")
     }
     ## Constructing the paths
     Working <- file.path(hosts[1,3], enexpr(project), enexpr(subproject))
