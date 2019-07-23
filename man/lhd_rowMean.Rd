@@ -27,6 +27,6 @@ library(tidyverse)
 master <- tibble(x = c(1:5, NA,NA), y = c(1,2,3,4,NA, NA,7))
 master
 vars <- c("x", "y")
-master <- lhd_rowMean(master, "dog", vars, 1)
+master <- lhd_rowMean(master, my_row_mean, vars, 1)
 master
 }

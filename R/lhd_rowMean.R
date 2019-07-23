@@ -15,11 +15,12 @@
 #' master <- tibble(x = c(1:5, NA,NA), y = c(1,2,3,4,NA, NA,7))
 #' master
 #' vars <- c("x", "y")
-#' master <- lhd_rowMean(master, "dog", vars, 1)
+#' master <- lhd_rowMean(master, my_row_mean, vars, 1)
 #' master
 
 lhd_rowMean <- function(data, newvar, vars, num_miss) {
-    na_var <- paste(newvar, "na", sep="_")
+    newvar <- enquo(newvar)
+    na_var <- paste(quo_name(newvar), "na", sep="_")
     data <- data %>%
         mutate(
             means= rowMeans(.[, vars], na.rm=TRUE),
