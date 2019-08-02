@@ -13,16 +13,19 @@
 #'
 lhd_dir_builder <- function() {
     ## Need to hardcode initial path.
-    setwd("/Users/jcheadle2/Box/GitHub/Software/R/RLifeHD")
-    ## Load Data
-    packageStartupMessage("LifeHD: Checking project dir files...")
-    xhosts <- as_tibble(read_excel("Data/lhd_dir.xlsx", sheet = "Hosts"))
-    data(lhd_dir, envir = parent.env(environment()))
-    ## Check data, resave as needed
-    if (dim(xhosts)[1] != dim(hosts)[1]) {
-        packageStartupMessage("LifeHD: Updating project dir files...")
-        hosts <- xhosts
-        write.csv(hosts, file = "../../Stata-ado/lhd_dir_hosts.csv", row.names = FALSE)
-        save(hosts, file = "Data/lhd_dir.RData")
+    sysinfo <- Sys.info()
+    if (sysinfo[["sysname"]] == "Darwin" & sysinfo[["user"]] == "jcheadle2") {
+        setwd("/Users/jcheadle2/Box/GitHub/Software/R/RLifeHD")
+        ## Load Data
+        packageStartupMessage("LifeHD: Checking project dir files...")
+        xhosts <- as_tibble(read_excel("Data/lhd_dir.xlsx", sheet = "Hosts"))
+        data(lhd_dir, envir = parent.env(environment()))
+        ## Check data, resave as needed
+        if (dim(xhosts)[1] != dim(hosts)[1]) {
+            packageStartupMessage("LifeHD: Updating project dir files...")
+            hosts <- xhosts
+            write.csv(hosts, file = "../../Stata-ado/lhd_dir_hosts.csv", row.names = FALSE)
+            save(hosts, file = "Data/lhd_dir.RData")
+        }
     }
 }

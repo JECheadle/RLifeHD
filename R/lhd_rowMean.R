@@ -7,7 +7,7 @@
 #' @param num_miss is the number of missing that will be used to determine if the row mean should be missing. It is expressed as \code{>=}. Therefore, if \code{num_miss == 2}, the variable would be coded to \code{NA} if 2 or more variables in the list are missing.
 #'
 #' @return The tibble or data.frame with the row mean and the number of missing across the variable list.
-#' @export lhd_dir
+#' @export lhd_rowMean
 #'
 #' @examples
 #' library(RLifeHD)
