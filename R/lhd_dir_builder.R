@@ -14,6 +14,7 @@
 lhd_dir_builder <- function() {
     ## Need to hardcode initial path.
     sysinfo <- Sys.info()
+    ## added if so only runs on my laptop [can fix this for  more machines later]
     if (sysinfo[["sysname"]] == "Darwin" & sysinfo[["user"]] == "jcheadle2") {
         setwd("/Users/jcheadle2/Box/GitHub/Software/R/RLifeHD")
         ## Load Data
