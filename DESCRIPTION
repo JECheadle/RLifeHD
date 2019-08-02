@@ -5,7 +5,7 @@ Version: 0.3.0
 Author: Jacob E. Cheadle, PhD
 Maintainer: Jacob E. cheadle <j.e.cheadle@utexas.edu>
 Description: This library contains functions that we use in LifeHD. 
-Depends: readxl, tidyverse
+Depends: readxl, tidyverse, crayon
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
