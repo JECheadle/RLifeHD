@@ -5,12 +5,15 @@
 #'version. If they differ will save new versions of RData and *.csv versions
 #'for the the stata version.
 #'@param Takes no parameters.
-#'@return NA
+#'@export lhd_dir_builder
 #'
 #' @examples
 #' ## Run the command
 #' lhd_dir_builder()
 #'
+
+library(readxl)
+library(tidyverse)
 lhd_dir_builder <- function() {
     ## Need to hardcode initial path.
     sysinfo <- Sys.info()

@@ -17,7 +17,7 @@
 #' Wdir <- lhd_dir("StudentHD1", "sHD1_Race")
 #' Wdir <- lhd_dir(StudentHD1, sHD1_Race)
 
-# library(tidyverse)
+library(tidyverse)
 # library(crayon)
 lhd_dir <- function(project, subproject) {
     # project <- quote(project)
